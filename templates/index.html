@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countries for Strategic Aid Allocation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #e2dada;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Countries for Strategic Aid Allocation</h2>
+        <form action="/predict & Visualize Clusters" method="post">
+            <label for="Country">Country:</label>
+            <input type="number" name="Country" required>
+            
+            <label for="Child_mort">Child_mort:</label>
+            <input type="number" step="0.01" name="Child_mort" required>
+            
+            <label for="Exports">Exports:</label>
+            <input type="number" name="Exports" required>
+            
+            <label for="Health">Health:</label>
+            <input type="number" name="Health" required>
+            
+            <label for="Imports">Imports:</label>
+            <input type="number" step="0.01" name="Imports" required>
+
+            
+            <label for="Income">Income:</label>
+            <input type="number" step="0.01" name="Income" required>
+
+            
+            <label for="Inflation">Inflation:</label>
+            <input type="number" step="0.01" name="Inflation" required>
+
+            
+            <label for="Life_expec">Life_expec:</label>
+            <input type="number" step="0.01" name="Life_expec" required>
+
+            
+            <label for="Total_fer">Total_fer:</label>
+            <input type="number" step="0.01" name="Total_fer" required>
+
+            
+            <label for="Gdpp">Gdpp:</label>
+            <input type="number" step="0.01" name="Gdpp" required>
+
+
+            
+            <input type="submit" value ="Predicted Hierarchical Cluster:",value = 'Predicted KMeans Cluster:'>
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
